@@ -11,6 +11,12 @@ YTDL_OPTS_AUDIO = {
     "no_warnings": True,
     "outtmpl": os.path.join(DOWNLOAD_PATH, "%(id)s.%(ext)s"),
     "postprocessors": [{"key": "FFmpegExtractAudio", "preferredcodec": "mp3", "preferredquality": "192"}],
+    "nocheckcertificate": True,   # ✨ මේක එකතු කරන්න
+    "http_headers": {              # ✨ මේක එකතු කරන්න
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                      "AppleWebKit/537.36 (KHTML, like Gecko) "
+                      "Chrome/116.0.0.0 Safari/537.36"
+    },
 }
 
 async def download_audio(query: str):
