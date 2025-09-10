@@ -13,7 +13,7 @@ def build_buttons(bot_username: str):
 
 def register_video(app: Client):
 
-    @app.on_message(filters.command("video") & ~filters.edited)
+    @app.on_message(filters.command("video"))
     async def video_handler(client, message):
         args = message.text.split(maxsplit=1)
         query = args[1] if len(args) > 1 else message.reply_to_message.text if message.reply_to_message else ""
